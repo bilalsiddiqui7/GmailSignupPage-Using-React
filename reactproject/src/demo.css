@@ -1,54 +1,84 @@
-#form_fb{
-    /* border: 5px solid red; */
+#firstlast{
+    margin: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-}
-#img_fb{
-    /* border: 5px solid red; */
-    transform: translate(350px,100px);
-}
-#outlined-basic{
-    /* border: 5px solid red; */
-    margin: 5px;
-    padding: 5px;
 }
 #textfield1_fb{
     font-size: 14px;
     line-height: 1.4286;
     color: #202124;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
-    margin: 50px;
+    margin: 30px;
+    margin-left: 50px;
 }
-#content_fb{
+#passcon{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form_fb{
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 90vh;
+    width: 60vw;
+    margin: 30px;
+}
+#outlined-basic{
     /* border: 5px solid red; */
-    margin-top: -200px;
+    margin: 5px;
+    padding: 5px;
 }
 #button2_fb{
     background-color:transparent;
     color: #1a73e8;
     box-shadow: none;
-    margin-left: 30px;
 }
 #button1_fb{
+    margin: 10px;
+    margin-left: 50px;
     background-color:transparent;
     color: #1a73e8;
     box-shadow: none;
-    margin-left: 30px;
+}
+#buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -120px;
 }
 #heading1_fb{
+    /* border: 5px solid red; */
     margin: 50px;
     font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 1.3333;
 }
-#textfield2_fb{
-    margin-left: 10px;
+#passcon2{
+    margin-left: 60px;
+    margin-top: -20px;
 }
-#textfield3_fb{
-    margin-left: -30px;
+#email_fb{
+    margin-left: 65px;
 }
-#button3_fb{
-    margin-left: 150px;
+#emailtest{
+    margin: 5px;
+}
+#googlesvg{
+    margin-left: 50px;
+}
+#outlined-basic-d{
+    height: 5px;
+    width: 440px;
 }

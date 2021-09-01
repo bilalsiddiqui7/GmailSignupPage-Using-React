@@ -1,0 +1,92 @@
+#maincontainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#main{
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 70vh;
+    width: 72vh;
+    margin: 50px;
+}
+
+#signin_fb{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#signin_fb1{
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+}
+#signin_fb2{
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+}
+#email_fb{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#button1{
+    background-color:transparent;
+    color: #1a73e8;
+    box-shadow: none;
+    text-transform: none;
+}
+#learnmore_fb{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -30px;
+}
+#learnmore_button{
+    background-color:transparent;
+    color: #1a73e8;
+    box-shadow: none;
+    text-transform: none;
+}
+#buttons{
+    margin: 50px;
+    /* border: 5px solid red; */
+    width: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#button2_fb{
+    text-transform: none;
+    color: #757575;
+}
+#button3_fb{
+    text-transform: none;
+}
+#english_fb{
+    margin: 5px;
+}
+#section2{
+    /* border: 5px solid red; */
+    /* width: 100vw; */
+    margin-top: -35px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+#button5_fb{
+    text-transform: none;
+    background-color:transparent;
+    color: #1a73e8;
+    box-shadow: none;
+}
