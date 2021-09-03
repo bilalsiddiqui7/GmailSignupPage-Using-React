@@ -57,7 +57,7 @@ const MultipleInputs = () => {
                                 </div>
                             </div>
                             <div style={{ width: "440px", height: "100px" }} id="email_fb">
-                                <TextField onChange={takeusername} /*value="gmail.com"*/ style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
+                                <TextField onChange={takeusername} style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
                                 <div id="emailtest">You'll need to confirm that this email belongs to you.</div>
                             </div>
                             <div style={{ width: "440px", height: "80px" }}>
