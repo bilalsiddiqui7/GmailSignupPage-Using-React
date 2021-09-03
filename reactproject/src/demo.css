@@ -1,84 +1,97 @@
-#firstlast{
-    margin: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-#textfield1_fb{
-    font-size: 14px;
-    line-height: 1.4286;
-    color: #202124;
-    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
-    margin: 30px;
-    margin-left: 50px;
-}
-#passcon{
-    margin: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
 #container{
-
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
+    padding: 50px;
 }
 #form_fb{
-    border: 0.5px solid black;
+    padding: 35px;
+    border: 0.1pt solid black;
+    width: 55%;
+    height: 650px;
+}
+#firstlast{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    height: 90vh;
-    width: 60vw;
-    margin: 30px;
 }
-#outlined-basic{
-    /* border: 5px solid red; */
-    margin: 5px;
-    padding: 5px;
+#lastname_fb{
+    margin-left: 20px;
+}
+#passcon{
+    display: flex;
+    flex-direction: row;
+}
+#textfield2_fb{
+    margin-left: 20px;
+}
+#button1_fb{
+    background-color:transparent;
+    color: #1a73e8;
+    box-shadow: none;
+    text-transform: none;
+}
+#buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 110%;
+    margin-left: -155px;
+    margin-top: -30px; /*Doubt->Ask Sir about this*/ 
 }
 #button2_fb{
     background-color:transparent;
     color: #1a73e8;
     box-shadow: none;
+    text-transform: none;
 }
-#button1_fb{
-    margin: 10px;
-    margin-left: 50px;
-    background-color:transparent;
-    color: #1a73e8;
-    box-shadow: none;
-}
-#buttons{
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: -120px;
-}
-#heading1_fb{
+#img_fb{
     /* border: 5px solid red; */
-    margin: 50px;
-    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.3333;
-}
-#passcon2{
-    margin-left: 60px;
-    margin-top: -20px;
-}
-#email_fb{
-    margin-left: 65px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: -450px;
 }
 #emailtest{
-    margin: 5px;
+    color: #757575;
+}
+#passcon2{
+    color: #757575;
+}
+#heading1_fb{
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.3333;
+    padding: 2px;
+}
+#button2_fb_multi{
+    text-transform: none;
+    color: #757575;
+    background-color:transparent;
+    box-shadow: none;
+}
+#button3_fb{
+    background-color: #1a73e8;
+}
+#img_text_fb{
+    /* border: 5px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    color: #202124;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+}
+#section2_multi{
+    display: flex;
+    flex-direction: row;
+}
+#section2_multi_1{
+    width: 550px;
+}
+#section2_multi_2{
+    display: flex;
+    flex-direction: row;
 }
 #googlesvg{
-    margin-left: 50px;
-}
-#outlined-basic-d{
-    height: 5px;
-    width: 440px;
+    padding: 10px;
 }

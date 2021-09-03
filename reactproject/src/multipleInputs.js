@@ -19,22 +19,22 @@ const MultipleInputs = () => {
                             </div>
                             <div id="firstlast">
                                 <div>
-                                    <TextField id="outlined-basic" label="First Name" variant="outlined" />
+                                    <TextField id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
                                 </div>
-                                <div>
+                                <div id="lastname_fb">
                                     <TextField id="outlined-basic" label="Last Name" variant="outlined" />
                                 </div>
                             </div>
-                            <div id="email_fb">
-                                <TextField id="outlined-basic-d" label="Username" variant="outlined" />
+                            <div style={{ width: "440px", height: "100px" }} id="email_fb">
+                                <TextField style={{ width: "440px" }} id="outlined-basic-d" value="                                                                      @gmail.com" label="Username" variant="outlined" />
                                 <div id="emailtest">You'll need to confirm that this email belongs to you.</div>
                             </div>
-                            <div>
+                            <div style={{ width: "440px", height: "80px" }}>
                                 <Button id="button1_fb" variant="contained" color="primary">
                                     Create a new Gmail address instead
                                 </Button>
                             </div>
-                            <div id="passcon">
+                            <div style={{ width: "440px" }} id="passcon">
                                 <span>
                                     <TextField id="outlined-basic" label="Password" variant="outlined" />
                                 </span>
@@ -45,7 +45,7 @@ const MultipleInputs = () => {
                             <div id="passcon2">
                                 Use 8 or more characters with a mix of letters, numbers & symbols
                             </div>
-                            <div id="textfield1_fb">
+                            <div style={{ width: "440px", height: "100px" }} id="textfield1_fb">
                                 <Checkbox
                                     defaultChecked
                                     color="primary"
@@ -65,10 +65,31 @@ const MultipleInputs = () => {
                     </div>
                     <div id="img_fb">
                         <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244" height="244" class="j9NuTc TrZEUc"></img>
-                        <div>One account. All of Google working for you.</div>
                     </div>
+                    <div id="img_text_fb">One account. All of Google <br></br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;working for you.</div>
                 </form>
-
+                <div id="section2_multi">
+                    <div id="section2_multi_1">
+                        <span id="english_fb_multi">English (United States)</span>
+                    </div>
+                    <div id="section2_multi_2">
+                    <span>
+                        <Button id="button2_fb_multi" variant="contained" color="primary">
+                            Help
+                        </Button>
+                    </span>
+                    <span>
+                        <Button id="button2_fb_multi" variant="contained" color="primary">
+                            Privacy
+                        </Button>
+                    </span>
+                    <span>
+                        <Button id="button2_fb_multi" variant="contained" color="primary">
+                            Terms
+                        </Button>
+                    </span>
+                    </div>
+                </div>
             </div>
         </div>
     )
