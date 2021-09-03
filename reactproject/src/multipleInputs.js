@@ -5,6 +5,37 @@ import Button from '@material-ui/core/Button';
 
 import "../src/demo.css"
 const MultipleInputs = () => {
+    const [firstname , setfirstname]=React.useState("")
+    const [lastname , setlastname]=React.useState("")
+    const [username , setusername]=React.useState("")
+    const [password , setpassword]=React.useState("")
+    const [passwordconfirm , setpasswordconfirm]=React.useState("")
+    const takefirstname= (e) => {
+        setfirstname(e.target.value)
+    }
+    const takelastname= (e) => {
+        setlastname(e.target.value)
+    }
+    const takeusername= (e) => {
+        setusername(e.target.value)
+    }
+    const takepassword= (e) => {
+        setpassword(e.target.value)
+    }
+    const takepasswordconfirm= (e) => {
+        setpasswordconfirm(e.target.value)
+    }
+    const submit= () => {
+        console.log(firstname,lastname,username,password,passwordconfirm)
+        let obj={
+            firstname : firstname,
+            lastname : lastname,
+            username : username,
+            password : password,
+            passwordconfirm : passwordconfirm
+
+        }
+    }
     return (
         <div>
             <div id="container">
@@ -19,14 +50,14 @@ const MultipleInputs = () => {
                             </div>
                             <div id="firstlast">
                                 <div>
-                                    <TextField id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
+                                    <TextField onChange={takefirstname} id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
                                 </div>
                                 <div id="lastname_fb">
-                                    <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+                                    <TextField onChange={takelastname} id="outlined-basic" label="Last Name" variant="outlined" />
                                 </div>
                             </div>
                             <div style={{ width: "440px", height: "100px" }} id="email_fb">
-                                <TextField style={{ width: "440px" }} id="outlined-basic-d" value="                                                                      @gmail.com" label="Username" variant="outlined" />
+                                <TextField onChange={takeusername} /*value="gmail.com"*/ style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
                                 <div id="emailtest">You'll need to confirm that this email belongs to you.</div>
                             </div>
                             <div style={{ width: "440px", height: "80px" }}>
@@ -36,10 +67,10 @@ const MultipleInputs = () => {
                             </div>
                             <div style={{ width: "440px" }} id="passcon">
                                 <span>
-                                    <TextField id="outlined-basic" label="Password" variant="outlined" />
+                                    <TextField onChange={takepassword} id="outlined-basic" label="Password" variant="outlined" />
                                 </span>
                                 <span id="textfield2_fb">
-                                    <TextField id="outlined-basic" label="Confirm" variant="outlined" />
+                                    <TextField onChange={takepasswordconfirm} id="outlined-basic" label="Confirm" variant="outlined" />
                                 </span>
                             </div>
                             <div id="passcon2">
@@ -57,7 +88,7 @@ const MultipleInputs = () => {
                                 <Button id="button2_fb" variant="contained" color="primary">
                                     Sign in instead
                                 </Button>
-                                <Button id="button3_fb" variant="contained" color="primary">
+                                <Button onClick={submit} id="button3_fb" variant="contained" color="primary">
                                     Next
                                 </Button>
                             </div>

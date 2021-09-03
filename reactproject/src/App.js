@@ -6,7 +6,7 @@ import SignIn from './signin';
 function App() {
   return (
     <div>
-    <SignIn/>
+    <MultipleInputs/>
     </div>
   );
 }

@@ -3,6 +3,21 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import "../src/signin.css"
 const SignIn = () => {
+    const [email , setemail]=React.useState("")
+    const [password , setpassword]=React.useState("")
+    const takeemail= (e) => {
+        setemail(e.target.value)
+    }
+    const takepassword= (e) => {
+        setpassword(e.target.value)
+    }
+    const submit= () => {
+        console.log(email,password)
+        let obj={
+            email : email,
+            password : password
+        }
+    }
     return (
         <div id="maincontainer_change">
             <div id="main_change">
@@ -18,9 +33,9 @@ const SignIn = () => {
                     </div>
                 </div>
                 <div id="email_fb_change" >
-                    <TextField style={{ width: "450px", height: "70px" }} id="outlined-basic-d" label="email or phone" variant="outlined" />
+                    <TextField onChange={takeemail} style={{ width: "450px", height: "70px" }} id="outlined-basic-d" label="email or phone" variant="outlined" />
                     <div>
-                        <TextField style={{ width: "450px", height: "70px" }} id="outlined-basic" label="Password" variant="outlined" />
+                        <TextField onChange={takepassword} style={{ width: "450px", height: "70px" }} id="outlined-basic" label="Password" variant="outlined" />
                     </div>
                     <div>
                         <Button id="button1_change" variant="contained" color="primary">
@@ -38,7 +53,7 @@ const SignIn = () => {
                     <Button id="button5_fb_change" variant="contained" color="primary">
                         Create account
                     </Button>
-                    <Button id="button3_fb_change" variant="contained" color="primary">
+                    <Button onClick={submit} id="button3_fb_change" variant="contained" color="primary">
                         Next
                     </Button>
                 </div>
