@@ -1,41 +1,106 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
+import { Signup } from './services/Userservice';
+import "../src/Signup.css"
 
-import "../src/demo.css"
 const MultipleInputs = () => {
-    const [firstname , setfirstname]=React.useState("")
-    const [lastname , setlastname]=React.useState("")
-    const [username , setusername]=React.useState("")
-    const [password , setpassword]=React.useState("")
-    const [passwordconfirm , setpasswordconfirm]=React.useState("")
-    const takefirstname= (e) => {
+    const [firstname, setfirstname] = React.useState("")
+    const [lastname, setlastname] = React.useState("")
+    const [username, setusername] = React.useState("")
+    const [password, setpassword] = React.useState("")
+    const [passwordconfirm, setpasswordconfirm] = React.useState("")
+    const takefirstname = (e) => {
         setfirstname(e.target.value)
     }
-    const takelastname= (e) => {
+
+    const takelastname = (e) => {
         setlastname(e.target.value)
     }
-    const takeusername= (e) => {
+    const takeusername = (e) => {
         setusername(e.target.value)
     }
-    const takepassword= (e) => {
+    const takepassword = (e) => {
         setpassword(e.target.value)
     }
-    const takepasswordconfirm= (e) => {
+    const takepasswordconfirm = (e) => {
         setpasswordconfirm(e.target.value)
     }
-    const submit= () => {
-        console.log(firstname,lastname,username,password,passwordconfirm)
-        let obj={
-            firstname : firstname,
-            lastname : lastname,
-            username : username,
-            password : password,
-            passwordconfirm : passwordconfirm
-
+    const [isValidfirst, setIsValidfirst] = useState(false);
+    const [messagefirst, setMessagefirst] = useState('');
+    const firstRegex = /[A-Z][a-z]/;
+    const validateFirst = (event) => {
+        const first = event.target.value;
+        if (firstRegex.test(first)) {
+            setIsValidfirst(true);
+        } else {
+            setIsValidfirst(false);
         }
     }
+
+    const [isValidlast, setIsValidlast] = useState(false);
+    const [messagelast, setMessagelast] = useState('');
+    const lastRegex = /[A-Z][a-z]/;
+    const validateLast = (event) => {
+        const last = event.target.value;
+        if (lastRegex.test(last)) {
+            setIsValidlast(true);
+        } else {
+            setIsValidlast(false);
+        }
+    }
+
+    const [isValid, setIsValid] = useState(false);
+    const [message, setMessage] = useState('');
+    const emailRegex = /\S+@\S+\.\S+/;
+    const validateEmail = (event) => {
+        const email = event.target.value;
+        if (emailRegex.test(email)) {
+            setIsValid(true);
+        } else {
+            setIsValid(false);
+        }
+    }
+
+    const [isValidpass, setIsValidpass] = useState(false);
+    const [messagepass, setMessagepass] = useState('');
+    const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    const validatePass = (event) => {
+        const pass = event.target.value;
+        if (passRegex.test(pass)) {
+            setIsValidpass(true);
+        } else {
+            setIsValidpass(false);
+        }
+    }
+
+    const [isValidcon, setIsValidcon] = useState(false);
+    const [messagecon, setMessagecon] = useState('');
+    const conRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    const validateCon = (event) => {
+        const con = event.target.value;
+        if (conRegex.test(con)) {
+            setIsValidcon(true);
+        } else {
+            setIsValidcon(false);
+        }
+    }
+
+    const submit = () => {
+        console.log(firstname, lastname, username, password, passwordconfirm)
+        let obj = {
+            firstName: firstname,
+            lastName: lastname,
+            password: password,
+            email: username,
+            service: "advance"
+
+        }
+        Signup(obj).then(response => console.log(response))
+            .catch(error => console.log(error))
+    }
+
     return (
         <div>
             <div id="container">
@@ -50,15 +115,24 @@ const MultipleInputs = () => {
                             </div>
                             <div id="firstlast">
                                 <div>
-                                    <TextField onChange={takefirstname} id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
+                                    <TextField error={!isValidfirst} onChange={validateFirst} id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
+                                    <div className={`messagefirst ${isValidfirst ? 'success' : 'error'}`}>
+                                        {messagefirst}
+                                    </div>
                                 </div>
                                 <div id="lastname_fb">
-                                    <TextField onChange={takelastname} id="outlined-basic" label="Last Name" variant="outlined" />
+                                    <TextField error={!isValidlast} onChange={validateLast} id="outlined-basic" label="Last Name" variant="outlined" />
+                                    <div className={`messagelast ${isValidlast ? 'success' : 'error'}`}>
+                                        {messagelast}
+                                    </div>
                                 </div>
                             </div>
                             <div style={{ width: "440px", height: "100px" }} id="email_fb">
-                                <TextField onChange={takeusername} style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
+                                <TextField error={!isValid} onChange={validateEmail} style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
                                 <div id="emailtest">You'll need to confirm that this email belongs to you.</div>
+                                <div className={`message ${isValid ? 'success' : 'error'}`}>
+                                    {message}
+                                </div>
                             </div>
                             <div style={{ width: "440px", height: "80px" }}>
                                 <Button id="button1_fb" variant="contained" color="primary">
@@ -67,10 +141,16 @@ const MultipleInputs = () => {
                             </div>
                             <div style={{ width: "440px" }} id="passcon">
                                 <span>
-                                    <TextField onChange={takepassword} id="outlined-basic" label="Password" variant="outlined" />
+                                    <TextField error={!isValidpass} onChange={validatePass} id="outlined-basic" label="Password" variant="outlined" />
+                                    <div className={`messagepass ${isValidpass ? 'success' : 'error'}`}>
+                                        {messagepass}
+                                    </div>
                                 </span>
                                 <span id="textfield2_fb">
-                                    <TextField onChange={takepasswordconfirm} id="outlined-basic" label="Confirm" variant="outlined" />
+                                    <TextField error={!isValidcon} onChange={validateCon} id="outlined-basic" label="Confirm" variant="outlined" />
+                                    <div className={`messagecon ${isValidcon ? 'success' : 'error'}`}>
+                                    {messagecon}
+                                </div>
                                 </span>
                             </div>
                             <div id="passcon2">
@@ -104,25 +184,26 @@ const MultipleInputs = () => {
                         <span id="english_fb_multi">English (United States)</span>
                     </div>
                     <div id="section2_multi_2">
-                    <span>
-                        <Button id="button2_fb_multi" variant="contained" color="primary">
-                            Help
-                        </Button>
-                    </span>
-                    <span>
-                        <Button id="button2_fb_multi" variant="contained" color="primary">
-                            Privacy
-                        </Button>
-                    </span>
-                    <span>
-                        <Button id="button2_fb_multi" variant="contained" color="primary">
-                            Terms
-                        </Button>
-                    </span>
+                        <span>
+                            <Button id="button2_fb_multi" variant="contained" color="primary">
+                                Help
+                            </Button>
+                        </span>
+                        <span>
+                            <Button id="button2_fb_multi" variant="contained" color="primary">
+                                Privacy
+                            </Button>
+                        </span>
+                        <span>
+                            <Button id="button2_fb_multi" variant="contained" color="primary">
+                                Terms
+                            </Button>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
 export default MultipleInputs

@@ -45,7 +45,7 @@ export const Header = () => {
             <div id="icons_apps">
               <AppsIcon />
             </div>
-            <div id="icons_img">
+            <div style={{ borderRadius : "10px" }} id="icons_img">
               <img src={Bilalgmaillogo} alt="Logo" />
             </div>
           </div>

@@ -1,23 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import "../src/signin.css"
+import { Signin } from './services/Userservice2';
 const SignIn = () => {
-    const [email , setemail]=React.useState("")
-    const [password , setpassword]=React.useState("")
-    const takeemail= (e) => {
+    const [email, setemail] = React.useState("")
+    const [password, setpassword] = React.useState("")
+    const takeemail = (e) => {
         setemail(e.target.value)
     }
-    const takepassword= (e) => {
+    const takepassword = (e) => {
         setpassword(e.target.value)
     }
-    const submit= () => {
-        console.log(email,password)
-        let obj={
-            email : email,
-            password : password
+    const submit = () => {
+        console.log(email, password)
+        let obj = {
+            email: email,
+            password: password
+        }
+        Signin(obj).then(response => console.log(response))
+        .catch(error => console.log(error))
+    }
+
+    /*const [isValid, setIsValid] = useState(false);
+    const [message, setMessage] = useState('');
+    const emailRegex = /\S+@\S+\.\S+/;
+    const validateEmail = (event) => {
+        const email = event.target.value;
+        if (emailRegex.test(email)) {
+            setIsValid(true);
+        } else {
+            setIsValid(false);
         }
     }
+
+    const [isValidpass, setIsValidpass] = useState(false);
+    const [messagepass, setMessagepass] = useState('');
+    const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    const validatePass = (event) => {
+        const pass = event.target.value;
+        if (passRegex.test(pass)) {
+            setIsValidpass(true);
+        } else {
+            setIsValidpass(false);
+        }
+    }*/
+
     return (
         <div id="maincontainer_change">
             <div id="main_change">
@@ -34,8 +62,10 @@ const SignIn = () => {
                 </div>
                 <div id="email_fb_change" >
                     <TextField onChange={takeemail} style={{ width: "450px", height: "70px" }} id="outlined-basic-d" label="email or phone" variant="outlined" />
+                    
                     <div>
                         <TextField onChange={takepassword} style={{ width: "450px", height: "70px" }} id="outlined-basic" label="Password" variant="outlined" />
+                        
                     </div>
                     <div>
                         <Button id="button1_change" variant="contained" color="primary">
@@ -60,24 +90,24 @@ const SignIn = () => {
             </div>
             <div id="section2_change">
                 <div id="section2_change_1">
-                <span id="english_fb_change">English (United States)</span>
+                    <span id="english_fb_change">English (United States)</span>
                 </div>
                 <div id="section2_change_2">
-                <span>
-                    <Button id="button2_fb_change" variant="contained" color="primary">
-                        Help
-                    </Button>
-                </span>
-                <span>
-                    <Button id="button2_fb_change" variant="contained" color="primary">
-                        Privacy
-                    </Button>
-                </span>
-                <span>
-                    <Button id="button2_fb_change" variant="contained" color="primary">
-                        Terms
-                    </Button>
-                </span>
+                    <span>
+                        <Button id="button2_fb_change" variant="contained" color="primary">
+                            Help
+                        </Button>
+                    </span>
+                    <span>
+                        <Button id="button2_fb_change" variant="contained" color="primary">
+                            Privacy
+                        </Button>
+                    </span>
+                    <span>
+                        <Button id="button2_fb_change" variant="contained" color="primary">
+                            Terms
+                        </Button>
+                    </span>
                 </div>
             </div>
         </div>
