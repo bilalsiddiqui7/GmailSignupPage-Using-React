@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import { Signup } from './services/Userservice';
+import { Signup } from './services/Userservice.js';
 import "../src/Signup.css"
 
 const MultipleInputs = () => {
@@ -115,20 +115,20 @@ const MultipleInputs = () => {
                             </div>
                             <div id="firstlast">
                                 <div>
-                                    <TextField error={!isValidfirst} onChange={validateFirst} id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
+                                    <TextField error={!isValidfirst} onClick={validateFirst} onChange={takefirstname} id="outlined-basic" style={{ width: "200px", height: "100px" }} label="First Name" variant="outlined" />
                                     <div className={`messagefirst ${isValidfirst ? 'success' : 'error'}`}>
                                         {messagefirst}
                                     </div>
                                 </div>
                                 <div id="lastname_fb">
-                                    <TextField error={!isValidlast} onChange={validateLast} id="outlined-basic" label="Last Name" variant="outlined" />
+                                    <TextField error={!isValidlast} onClick={validateLast} onChange={takelastname} id="outlined-basic" label="Last Name" variant="outlined" />
                                     <div className={`messagelast ${isValidlast ? 'success' : 'error'}`}>
                                         {messagelast}
                                     </div>
                                 </div>
                             </div>
                             <div style={{ width: "440px", height: "100px" }} id="email_fb">
-                                <TextField error={!isValid} onChange={validateEmail} style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
+                                <TextField error={!isValid} onClick={validateEmail} onChange={takeusername} style={{ width: "440px" }} id="outlined-basic-d" label="Username" variant="outlined" />
                                 <div id="emailtest">You'll need to confirm that this email belongs to you.</div>
                                 <div className={`message ${isValid ? 'success' : 'error'}`}>
                                     {message}
@@ -141,16 +141,16 @@ const MultipleInputs = () => {
                             </div>
                             <div style={{ width: "440px" }} id="passcon">
                                 <span>
-                                    <TextField error={!isValidpass} onChange={validatePass} id="outlined-basic" label="Password" variant="outlined" />
+                                    <TextField error={!isValidpass} onClick={validatePass} onChange={takepassword} id="outlined-basic" label="Password" variant="outlined" />
                                     <div className={`messagepass ${isValidpass ? 'success' : 'error'}`}>
                                         {messagepass}
                                     </div>
                                 </span>
                                 <span id="textfield2_fb">
-                                    <TextField error={!isValidcon} onChange={validateCon} id="outlined-basic" label="Confirm" variant="outlined" />
+                                    <TextField error={!isValidcon} onClick={validateCon} onChange={takepasswordconfirm} id="outlined-basic" label="Confirm" variant="outlined" />
                                     <div className={`messagecon ${isValidcon ? 'success' : 'error'}`}>
-                                    {messagecon}
-                                </div>
+                                        {messagecon}
+                                    </div>
                                 </span>
                             </div>
                             <div id="passcon2">

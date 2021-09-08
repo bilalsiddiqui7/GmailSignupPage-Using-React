@@ -1,9 +1,9 @@
 import React from 'react'
 import GooglekeepLogo from './GooglekeepLogo.png'
 import Bilalgmaillogo from './Bilalgmaillogo.png'
-import RefreshIcon from '@material-ui/icons/Refresh';
-import ViewStreamIcon from '@material-ui/icons/ViewStream';
-import SettingsIcon from '@material-ui/icons/Settings';
+import RefreshIcon from '@material-ui/icons/RefreshOutlined';
+import ViewStreamIcon from '@material-ui/icons/ViewStreamOutlined';
+import SettingsIcon from '@material-ui/icons/SettingsOutlined';
 import AppsIcon from '@material-ui/icons/Apps';
 import "../src/header.css"
 
@@ -45,7 +45,7 @@ export const Header = () => {
             <div id="icons_apps">
               <AppsIcon />
             </div>
-            <div style={{ borderRadius : "10px" }} id="icons_img">
+            <div id="icons_img">
               <img src={Bilalgmaillogo} alt="Logo" />
             </div>
           </div>
