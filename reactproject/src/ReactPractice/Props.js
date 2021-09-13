@@ -1,11 +1,25 @@
-import React from 'react'
+// import React from 'react'
 
-export const Props = (props) => {
-    return (
-        <div>
-            <h1>Good morning {props.name}, Techonology: {props.tech}</h1>
-            {props.children}
-        </div>
-    )
+// const Props = (props) => {
+//     return (
+//         <div>
+//             <h1>Hello {props.name} This is Functional Component</h1>
+//         </div>
+//     )
+// }
+// export default Props
+
+import React, { Component } from 'react'
+
+export class Props extends Component {
+    render() {
+        return (
+            <div>
+            <h1>Hello {this.props.name} This is Class Component</h1>
+            </div>
+        )
+    }
 }
+
 export default Props
+

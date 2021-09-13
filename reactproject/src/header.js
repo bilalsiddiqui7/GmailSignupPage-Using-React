@@ -5,27 +5,19 @@ import RefreshIcon from '@material-ui/icons/RefreshOutlined';
 import ViewStreamIcon from '@material-ui/icons/ViewStreamOutlined';
 import SettingsIcon from '@material-ui/icons/SettingsOutlined';
 import AppsIcon from '@material-ui/icons/Apps';
+import DehazeOutlinedIcon from '@material-ui/icons/DehazeOutlined';
 import "../src/header.css"
 
-
-export const Header = () => {
+export const Header = (props) => {
+  const handleClickDrawerToggle = () => {
+    props.drawerExpand();
+  }
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <svg focusable="false" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Notes</a></li>
-          <li><a class="dropdown-item" href="#">Reminders</a></li>
-          <li><a class="dropdown-item" href="#">Edit Labels</a></li>
-          <li><a class="dropdown-item" href="#">Archieve</a></li>
-          <li><a class="dropdown-item" href="#">Trash</a></li>
-        </ul>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <button onClick={handleClickDrawerToggle}><DehazeOutlinedIcon/></button>
         <img src={GooglekeepLogo} alt="Logo" />
-
         <a class="navbar-brand" href="#">Keep</a>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <input style={{ width: "840px" }} class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         </div>
