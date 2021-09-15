@@ -8,5 +8,3 @@ function UseState() {
         </div>
     )
 }
-
-export default UseState

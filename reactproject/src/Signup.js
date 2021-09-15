@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import { Signup } from './services/Userservice.js';
+import { SignUp } from './services/Userservice.js';
 import "../src/Signup.css"
-
-const MultipleInputs = () => {
+import axios from 'axios';
+import { useEffect } from 'react';
+const Signup = () => {
     const [firstname, setfirstname] = React.useState("")
     const [lastname, setlastname] = React.useState("")
     const [username, setusername] = React.useState("")
@@ -14,7 +15,6 @@ const MultipleInputs = () => {
     const takefirstname = (e) => {
         setfirstname(e.target.value)
     }
-
     const takelastname = (e) => {
         setlastname(e.target.value)
     }
@@ -97,8 +97,9 @@ const MultipleInputs = () => {
             service: "advance"
 
         }
-        Signup(obj).then(response => console.log(response))
+        SignUp(obj).then(response => console.log(response))
             .catch(error => console.log(error))
+
     }
 
     return (
@@ -206,4 +207,4 @@ const MultipleInputs = () => {
     )
 }
 
-export default MultipleInputs
+export default Signup
